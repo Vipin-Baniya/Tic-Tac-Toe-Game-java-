@@ -106,8 +106,8 @@ function updateStatus() {
 }
 
 function checkWinner(b) {
-  for (const [a, c, d] of WIN_LINES) {
-    if (b[a] && b[a] === b[c] && b[c] === b[d]) return b[a];
+  for (const [a, b2, c] of WIN_LINES) {
+    if (b[a] && b[a] === b[b2] && b[b2] === b[c]) return b[a];
   }
   return null;
 }
