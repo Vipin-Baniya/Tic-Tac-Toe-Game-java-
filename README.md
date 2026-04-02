@@ -1,6 +1,9 @@
 # Tic-Tac-Toe Game – Java Full-Stack
 
+🎮 **Play it live on GitHub Pages → https://vipin-baniya.github.io/Tic-Tac-Toe-Game-java-/**
+
 A full-stack Tic-Tac-Toe game built with **Spring Boot** (Java) on the backend and plain **HTML/CSS/JavaScript** on the frontend.
+The `docs/` folder contains a **fully static version** of the game (no server needed) that is automatically deployed to GitHub Pages.
 
 ## Features
 
@@ -20,6 +23,11 @@ A full-stack Tic-Tac-Toe game built with **Spring Boot** (Java) on the backend a
 ## Project Structure
 
 ```
+docs/                               # ← Static version deployed to GitHub Pages
+├── index.html
+├── style.css
+└── script.js                       # All game logic in JavaScript (no backend)
+
 src/
 ├── main/
 │   ├── java/com/tictactoe/
@@ -30,7 +38,7 @@ src/
 │   └── resources/
 │       ├── application.properties
 │       └── static/
-│           ├── index.html              # Single-page frontend
+│           ├── index.html              # Single-page frontend (served by Spring Boot)
 │           ├── style.css
 │           └── script.js
 └── test/
@@ -77,3 +85,17 @@ mvn test
 2. Click any empty cell to place your mark.
 3. In Computer mode you are always **X** and go first; the AI plays **O**.
 4. Use **Restart** to play again in the same mode, or **Home** to switch modes.
+
+## GitHub Pages (Live Demo)
+
+The game is automatically deployed to GitHub Pages on every push to `main`.
+
+**Enable GitHub Pages once** (one-time setup):
+1. Go to your repo → **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Save — the workflow in `.github/workflows/pages.yml` will do the rest
+
+After the first deployment the game will be live at:
+```
+https://vipin-baniya.github.io/Tic-Tac-Toe-Game-java-/
+```

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Tic-Tac-Toe</h1>
+
+    <!-- Mode selection screen -->
+    <div id="mode-screen" class="screen">
+      <h2>Select Game Mode</h2>
+      <div class="mode-buttons">
+        <button class="btn btn-primary" onclick="startGame('TWO_PLAYER')">
+          👥 2 Player
+        </button>
+        <button class="btn btn-secondary" onclick="startGame('VS_COMPUTER')">
+          🤖 vs Computer
+        </button>
+      </div>
+    </div>
+
+    <!-- Game screen -->
+    <div id="game-screen" class="screen hidden">
+      <div id="mode-label" class="mode-label"></div>
+      <div id="status" class="status"></div>
+
+      <div class="board" id="board">
+        <div class="cell" data-index="0" onclick="handleClick(0)"></div>
+        <div class="cell" data-index="1" onclick="handleClick(1)"></div>
+        <div class="cell" data-index="2" onclick="handleClick(2)"></div>
+        <div class="cell" data-index="3" onclick="handleClick(3)"></div>
+        <div class="cell" data-index="4" onclick="handleClick(4)"></div>
+        <div class="cell" data-index="5" onclick="handleClick(5)"></div>
+        <div class="cell" data-index="6" onclick="handleClick(6)"></div>
+        <div class="cell" data-index="7" onclick="handleClick(7)"></div>
+        <div class="cell" data-index="8" onclick="handleClick(8)"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-outline" onclick="restartGame()">🔄 Restart</button>
+        <button class="btn btn-outline" onclick="goHome()">🏠 Home</button>
+      </div>
+
+      <div class="score-board">
+        <div class="score">
+          <span class="score-label" id="score-x-label">X</span>
+          <span class="score-value" id="score-x">0</span>
+        </div>
+        <div class="score">
+          <span class="score-label">Draws</span>
+          <span class="score-value" id="score-draws">0</span>
+        </div>
+        <div class="score">
+          <span class="score-label" id="score-o-label">O</span>
+          <span class="score-value" id="score-o">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
