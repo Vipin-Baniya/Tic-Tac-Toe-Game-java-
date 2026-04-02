@@ -33,6 +33,11 @@ function goHome() {
   gameId = null;
   currentMode = null;
   boardLocked = false;
+  // Reset scores when returning to the home screen
+  scores.X = 0; scores.O = 0; scores.draws = 0;
+  document.getElementById('score-x').textContent = '0';
+  document.getElementById('score-o').textContent = '0';
+  document.getElementById('score-draws').textContent = '0';
 }
 
 /* -------- Game flow -------- */
@@ -150,5 +155,4 @@ function updateScoreLabels(mode) {
     document.getElementById('score-x-label').textContent = 'Player X';
     document.getElementById('score-o-label').textContent = 'Player O';
   }
-  // Reset scores on mode change only when going home
 }

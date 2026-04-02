@@ -66,10 +66,12 @@ public class GameController {
 
     /** Converts a Game to a JSON-friendly map. */
     private Map<String, Object> toResponse(Game game) {
-        // Convert char[] board to String[] for clean JSON output
+        // Convert char[] board to String[] for JSON output.
+        // Empty cells are represented as an empty string "".
         String[] boardStr = new String[9];
         for (int i = 0; i < 9; i++) {
-            boardStr[i] = String.valueOf(game.getBoard()[i]).trim();
+            char c = game.getBoard()[i];
+            boardStr[i] = (c == ' ') ? "" : String.valueOf(c);
         }
         return Map.of(
             "gameId", game.getGameId(),
